@@ -1,0 +1,33 @@
+# Testing Strategy
+
+For our project, we have established a robust testing strategy that includes both End-to-End (E2E) and Unit/Component testing to ensure the quality and reliability of our codebase.
+
+## Playwright for End-to-End (E2E) Testing
+
+We use [Playwright] for E2E testing. This tool automates browsers to test our application's user interface and behavior from a user's perspective. Running these tests before production ensures that the entire application, including all integrated parts, functions as expected in a real-world environment.
+
+## Unit or Component Testing
+
+In addition to E2E testing, we conduct unit or component testing. These tests focus on smaller, isolated parts of our application, such as individual functions or code modules. This approach helps catch issues early in the development process by verifying that each piece of code works correctly on its own.
+
+## Pre-Production E2E Testing
+
+Before deploying to production, we run E2E tests to ensure that everything works correctly as a whole. This final check ensures that no integration issues or regressions have been introduced during development.
+
+## Recommendations
+
+### Continuous Integration (CI) with GitHub Actions
+
+We use [GitHub Actions] to integrate our testing into a continuous integration (CI) pipeline. Every commit or pull request triggers unit tests, and E2E tests are also run in specific scenarios. This setup helps in catching issues early in the development process.
+
+### Test Coverage with SonarQube
+
+To ensure that we maintain high test coverage, we use [SonarQube]. SonarQube is integrated into our CI pipeline and provides detailed insights into test coverage, code quality, and potential vulnerabilities. This helps us focus on critical paths in our application and avoid chasing 100% coverage at the expense of code quality.
+
+### Test Environment
+
+Ensure that your E2E tests are run in an environment that closely mimics your production environment. This reduces the risk of environment-specific issues.
+
+### Flaky Tests
+
+Address any unreliable tests to ensure consistent and accurate results.

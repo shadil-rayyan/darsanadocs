@@ -1,0 +1,100 @@
+
+# Development Guidelines
+
+## Overview
+
+To maintain a high-quality codebase and streamline our development process, we use several tools and practices. This document provides an overview of our development workflow, including code quality enforcement, commit message conventions, and branch management for our Next.js project.
+
+## Tools and Setup
+
+### ESLint and Prettier
+
+We use **ESLint** and **Prettier** to ensure consistent code quality and formatting. These tools are configured to automatically run on commits through **Husky**. This means that before any code is committed, it will be automatically linted and formatted to adhere to our coding standards.
+
+**Key Points:**
+- **ESLint**: Enforces coding standards and best practices.
+- **Prettier**: Formats code for consistent style.
+
+### Commitlint
+
+We use **Commitlint** to enforce conventional commit messages. This ensures that all commit messages follow a clear and consistent format, which helps in generating changelogs and maintaining versioning.
+
+**Commit Message Structure:**
+```
+<type>(<scope>): <subject>
+```
+- **type**: Type of change (e.g., `feat`, `fix`, `chore`)
+- **scope**: Area of the codebase (e.g., `admin`, `client`)
+- **subject**: Brief description of the change
+
+**Example:**
+```
+feat(admin): add new user management feature
+```
+
+## Workflow
+
+1. **Code Changes**: Write and test your code changes in your feature branch.
+2. **Commit**: When committing, Husky will automatically run ESLint, Prettier, and Commitlint to ensure your code is correctly formatted, linted, and your commit message follows the conventional format.
+3. **Push**: Push your changes to the remote repository. Husky will also run tests (if configured) before allowing the push.
+
+## Branch Management
+
+### Branch Naming Conventions
+
+Branches should follow a consistent naming pattern:
+- `feature/<description>`: New features
+- `bugfix/<description>`: Bug fixes
+- `hotfix/<description>`: Critical fixes in production
+- `chore/<description>`: Maintenance or non-functional changes
+
+### Forking and Pull Requests
+
+1. **Fork the Repository**:
+   - Work on your forked copy and create a new branch from the `main` branch.
+
+2. **Create a Pull Request**:
+   - Once your work is complete and all tests pass, push your branch to your fork and create a pull request against the main repository.
+
+3. **Review and Merge**:
+   - Ensure that your code is reviewed by at least one other team member before merging.
+
+## Naming Conventions
+
+### Components
+
+- **Admin Components**: Use the format `Admin<ComponentName>`
+- **Client Components**: Use the format `Client<ComponentName>`
+
+### Files and Folders
+
+- Folder names should be descriptive and reflect the contents (e.g., `user-management`, `dashboard`).
+
+## Pre-commit and Pre-push Hooks
+
+Husky is configured to run specific tasks before commits and pushes:
+
+- **Pre-commit Hook**: Automatically runs ESLint, Prettier, and ASCII Lint before a commit is made.
+- **Pre-push Hook**: Automatically runs the test suite before pushing to the remote repository.
+
+## Verification Across Branches
+
+Before merging your branch, always switch between branches and run tests to ensure there are no integration issues.
+
+## Automated Testing and CI/CD
+
+We use CI/CD tools (like GitHub Actions or Jenkins) to automate testing, linting, and deployment. Ensure all tests pass in the CI pipeline before merging your pull request.
+
+## Documentation and Code Comments
+
+- **Documentation**: Update relevant documentation for any new features or changes.
+- **Code Comments**: Use comments to explain complex logic or decisions within the code.
+
+## FAQs
+
+**Q: How do I fix linting or formatting issues?**  
+A: Husky will automatically fix these issues before committing. If you encounter issues, run `npm run lint:fix` and `npm run format` manually.
+
+**Q: What should I do if my commit message doesn’t conform to the standard?**  
+A: Commitlint will prevent commits with invalid messages. Amend your commit message to follow the conventional format and try committing again.
+

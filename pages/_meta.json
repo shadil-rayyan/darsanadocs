@@ -1,15 +1,15 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
-  }
+  "technologystack": "Technology Stack",
+  "projectworkflow": "Project Workflow ",
+  "howwework": "How We Work",
+  "codeoptimization": "Code Optimization & Performance",
+  "runningtheproject": "Running the Project",
+  "testing": "Testing",
+  "bugtracking": "Bug Tracking",
+  "deployment": "Deployment",
+  "comingfeatures": "Coming Features",
+  "developmentguidelines": "Development Guidelines",
+  "teamroles": "Team Roles & Responsibilities",
+  "projecttimeline": "Project Timeline"
 }
